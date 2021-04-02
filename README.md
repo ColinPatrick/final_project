@@ -1,0 +1,1 @@
+A film and television database with a focus on social features.  Users can create profiles, and browse/search for films and shows. The users can log the movies they've seen, rate them, review them, and blog about them! Users can also keep track of watchlists that contain the movies they still want to see.
