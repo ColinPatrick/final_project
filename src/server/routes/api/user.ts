@@ -1,9 +1,8 @@
 import { Router } from 'express';
 import db from '../../db';
-import usercontentRouter from './usercontent';
 
 const router = Router();
-
+// get request that fetches a single user by their id
 router.get('/:userid', async (req, res) => {
 
     const userid = Number(req.params.userid);
@@ -16,7 +15,5 @@ router.get('/:userid', async (req, res) => {
         res.status(500).json({ msg: 'Something is wrong!', e });
     }
 })
-
-router.use('/usercontent', usercontentRouter);
 
 export default router;
