@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { NavLink } from 'react-router-dom';
+import { User } from '../utils/api';
 
 //Nav FC renders a navbar at the top of the page that allows user to switch between 'Home' and 'Compose' page views
 const Nav: React.FC<NavProps> = props => {
@@ -9,7 +10,7 @@ const Nav: React.FC<NavProps> = props => {
     React.useEffect(() => {
         console.log('nav useEffect');
         if (props.loggedIn) {
-            setLoginLink('Logout')
+            setLoginLink('Logout');
         } else {
             setLoginLink('Login');
         };

@@ -1,6 +1,8 @@
 import * as React from 'react';
 
 const Home: React.FC<HomeProps> = props => {
+    React.useEffect(() => console.log(localStorage), [])
+
     return (
         <main className="container">
             <section className="row">

@@ -11,12 +11,10 @@ const Login: React.FC<LoginProps> = props => {
     const [logoutScreen, setLogoutScreen] = React.useState(false);
 
     React.useEffect(() => {
-        console.log(User);
         if(User.userid !== null) {
-            console.log('I got here', User);
             setLogoutScreen(true);
         }
-    });
+    }, []);
 
     const handleSignIn = async (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
@@ -52,7 +50,12 @@ const Login: React.FC<LoginProps> = props => {
         });
         setToken('');
         localStorage.clear();
-        console.log(User);
+        // localStorage.removeItem("userid");
+        // localStorage.removeItem("role");
+        // User = {
+        //     userid: localStorage.getItem('userid') || null,
+        //     role: localStorage.getItem('role') || null
+        // };
         props.loginHandler(false);
         props.history.push('/');
         location.reload();
