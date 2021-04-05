@@ -31,6 +31,9 @@ const App: React.FC<AppProps> = props => {
 				<Route exact path='/register'>
 					<Register />
 				</Route>
+				<Route exact path='/filmdb'>
+					
+				</Route>
 			</Switch>
 		</BrowserRouter>
     );
