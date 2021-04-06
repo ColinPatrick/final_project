@@ -1,9 +1,11 @@
 import * as React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Router, Switch, Route } from 'react-router-dom';
 import Nav from './components/Nav';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import SearchBar from "./components/SearchBar";
+import SearchResults from "./components/SearchResults";
 
 // App FC creates and outlines the front end routes
 // Nav component above all routes creates a Navbar that remains at the top of the page
@@ -20,6 +22,7 @@ const App: React.FC<AppProps> = props => {
         <BrowserRouter>
 		<Nav 
 		loggedIn = {loggedUser} />
+		<SearchBar />
 			<Switch>
 				<Route exact path='/'>
 					<Home />
@@ -31,6 +34,9 @@ const App: React.FC<AppProps> = props => {
 				<Route exact path='/register'>
 					<Register />
 				</Route>
+				<Route exact path={`/:searchTerm`}>
+					<SearchResults />
+				</Route>
 			</Switch>
 		</BrowserRouter>
     );
@@ -39,3 +45,23 @@ const App: React.FC<AppProps> = props => {
 interface AppProps {}
 // // App is exported
 export default App;
+
+
+// return (
+// 	<BrowserRouter>
+// 	<Nav 
+// 	loggedIn = {loggedUser} />
+// 		<Switch>
+// 			<Route exact path='/'>
+// 				<Home />
+// 			</Route>
+// 			<Route exact path='/login'>
+// 				<Login
+// 				loginHandler = {updateLoggedUser} />
+// 			</Route>
+// 			<Route exact path='/register'>
+// 				<Register />
+// 			</Route>
+// 		</Switch>
+// 	</BrowserRouter>
+// );
