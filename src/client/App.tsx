@@ -32,7 +32,8 @@ const App: React.FC<AppProps> = props => {
 				<Route exact path='/register'>
 					<Register />
 				</Route>
-				<Route exact path='/profile'>
+				<Route exact path='/profile/:userid'>
+				{/* <Route exact path='/profile'>*/}
 					<Profile />
 				</Route>
 			</Switch>
