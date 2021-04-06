@@ -4,6 +4,7 @@ import Nav from './components/Nav';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import Profile from './pages/Profile';
 
 // App FC creates and outlines the front end routes
 // Nav component above all routes creates a Navbar that remains at the top of the page
@@ -30,6 +31,9 @@ const App: React.FC<AppProps> = props => {
 				</Route>
 				<Route exact path='/register'>
 					<Register />
+				</Route>
+				<Route exact path='/profile'>
+					<Profile />
 				</Route>
 			</Switch>
 		</BrowserRouter>
