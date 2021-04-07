@@ -8,6 +8,7 @@ import FilmDB from './pages/FilmDB';
 import FilmDeets from './pages/FilmDeets';
 import SearchBar from "./components/SearchBar";
 import SearchResults from "./components/SearchResults";
+import Profile from './pages/Profile';
 
 // App FC creates and outlines the front end routes
 // Nav component above all routes creates a Navbar that remains at the top of the page
@@ -44,6 +45,9 @@ const App: React.FC<AppProps> = props => {
 				</Route>
 				<Route exact path={`/:searchTerm`}>
 					<SearchResults />
+				</Route>
+				<Route exact path='/profile/:userid'>
+					<Profile />
 				</Route>
 			</Switch>
 		</BrowserRouter>
