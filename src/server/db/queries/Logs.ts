@@ -2,7 +2,7 @@ import { Query } from '../';
 // all queries for the film logs table
 
 // query to get all film logs for a user
-const allUserLogs = (userid: number) => Query('SELECT * FROM Logs WHERE userid = ?', [userid]);
+const allUserLogs = (userid: number) => Query('SELECT Logs.*, Films.* FROM Logs JOIN Films on Films.filmid = Logs.filmid WHERE userid = ?', [userid]);
 // query to add a new film log
 const newLog = (newLog: { userid: number, filmid: number }) => Query('INSERT INTO Logs SET ?', newLog);
 // query to remove a log

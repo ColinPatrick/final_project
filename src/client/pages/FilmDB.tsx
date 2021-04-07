@@ -9,7 +9,6 @@ const FilmDB = (props: FilmDBProps) => {
     const [totalPages, setTotalPages] = useState(500);
     const [currentPage, setCurrentPage] = useState(2);
     const [isBottom, setIsBottom] = useState(false);
-    const [sortValue, setSortValue] = useState(0);
     const [genre, setGenre] = useState('');
     const [sort, setSort] = useState('');
 
@@ -60,7 +59,7 @@ const FilmDB = (props: FilmDBProps) => {
                 .then(allMovies => setMovies(allMovies.results))
                 .catch(error => console.log(error))
         }
-    })
+    }, [sort, genre])
 
     useEffect(() => {
         if (isBottom) {
@@ -203,7 +202,7 @@ const FilmDB = (props: FilmDBProps) => {
                         .filter(movie => movie.poster_path !== null)
                         .map((movie: { id: any; title: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal; poster_path: any; overview: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal; }) => (
                             <div key={nanoid()} className="col-md-2 card rounded shadow border overflow-hidden d-flex mx-1 my-2 pb-3">
-                                <Link className="h6 text-truncate text-dark pt-2" to='/'>{movie.title}</Link>
+                                <Link className="h6 text-truncate text-dark pt-2" to={`/film/${movie.id}`}>{movie.title}</Link>
                                 <img src={`${posterLink}${movie.poster_path}`} alt="poster" />
                             </div>
                         ))}

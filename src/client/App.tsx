@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import FilmDB from './pages/FilmDB';
+import FilmDeets from './pages/FilmDeets';
 
 // App FC creates and outlines the front end routes
 // Nav component above all routes creates a Navbar that remains at the top of the page
@@ -34,6 +35,9 @@ const App: React.FC<AppProps> = props => {
 				</Route>
 				<Route exact path='/filmdb'>
 					<FilmDB />
+				</Route>
+				<Route exact path='/film/:filmid'>
+					<FilmDeets />
 				</Route>
 			</Switch>
 		</BrowserRouter>
