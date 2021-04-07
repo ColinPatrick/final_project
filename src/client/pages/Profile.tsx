@@ -1,9 +1,23 @@
 import * as React from 'react';
 import * as Bootstrap from 'bootstrap';
 import './PagesStyles';
+import { Link, useParams } from 'react-router-dom'
 
-const Profile: React.FC<ProfileProps> = props => {
-    React.useEffect(() => console.log(localStorage), []);
+const Profile: React.FC<ProfileProps> = (props) => {
+    const { userid } = useParams()
+    const [user, setUser] = React.useState({})
+    React.useEffect(() => {
+        (async (req, res) => {
+            try {
+                let res = await fetch(`/api/user/${userid}`)
+                let user = await res.json()
+                setUser(user)
+
+            } catch (error) {
+                console.error(error)
+            }
+        })()
+    }, []);
 
     const pic = 'https://images.unsplash.com/photo-1612392062335-300bb9bd3054?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2700&q=80';
 
@@ -11,7 +25,7 @@ const Profile: React.FC<ProfileProps> = props => {
         <main className="container">
             <section className="Jumbotron fluid">
                 <div className="col-12">
-                    <h1 className="display-1 text-center">Profile Page!</h1>
+                    <h1 className="display-1 text-center">Hello, {user?.username}!</h1>
                 </div>
             </section>
 
@@ -20,13 +34,14 @@ const Profile: React.FC<ProfileProps> = props => {
                 {/* WATCHLIST CARD */}
                 <div className="card">
                     <h5 className='card-header'>Watchlist</h5>
+                    {/* img should display a random thumbnail of a movie in the watchlist */}
                     <img id='Dune'
-                    className="card-img-top" 
-                    src={pic} 
-                    alt="img-thumbnail" />
+                        className="card-img-top"
+                        src={pic}
+                        alt="img-thumbnail" />
 
                     <div className="card-body">
-                        <a href="#" className='btn btn-outline-primary'>Go To Watchlist</a>
+                        <Link to="/watchlist" className='btn btn-outline-primary'>Go To Watchlist</Link>
                     </div>
                 </div>
 
@@ -34,9 +49,9 @@ const Profile: React.FC<ProfileProps> = props => {
                 <div className="card">
                     <h5 className='card-header'>Blogs</h5>
                     <div className="card-body">
-                        {/* should display the first...50(?) characters of the blog */}
+                        {/* should display the first...50ish characters of the blog */}
                         <h5>Lorem Ipsum</h5>
-                        <a href="#" className='btn btn-outline-primary'>Go To Blogs</a>
+                        <Link to="/Blogs" className='btn btn-outline-primary'>Go To Blogs</Link>
                     </div>
                 </div>
 
@@ -44,11 +59,11 @@ const Profile: React.FC<ProfileProps> = props => {
                 <div className="card">
                     <h5 className='card-header'>Reviews</h5>
                     <img id='Dune'
-                    className="card-img-top" 
-                    src={pic} 
-                    alt="img-thumbnail" />
+                        className="card-img-top"
+                        src={pic}
+                        alt="img-thumbnail" />
                     <div className="card-body">
-                        <a href="#" className='btn btn-outline-primary'>Go To Reviews</a>
+                        <Link to="/reviews" className='btn btn-outline-primary'>Go To reviews</Link>
                     </div>
                 </div>
 
@@ -56,11 +71,11 @@ const Profile: React.FC<ProfileProps> = props => {
                 <div className="card">
                     <h5 className='card-header'>Ratings</h5>
                     <img id='Dune'
-                    className="card-img-top" 
-                    src={pic} 
-                    alt="img-thumbnail" />
+                        className="card-img-top"
+                        src={pic}
+                        alt="img-thumbnail" />
                     <div className="card-body">
-                        <a href="#" className='btn btn-outline-primary'>Go To Ratings</a>
+                        <Link to="/ratings" className='btn btn-outline-primary'>Go To ratings</Link>
                     </div>
                 </div>
             </div>
@@ -69,6 +84,8 @@ const Profile: React.FC<ProfileProps> = props => {
 
 }
 
-interface ProfileProps { }
+interface ProfileProps {
+    username: string
+}
 
 export default Profile;
