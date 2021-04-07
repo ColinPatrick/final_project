@@ -26,7 +26,7 @@ const Profile: React.FC<ProfileProps> = props => {
                     alt="img-thumbnail" />
 
                     <div className="card-body">
-                        <a href="#" className='btn btn-primary'>Go To Watchlist</a>
+                        <a href="#" className='btn btn-outline-primary'>Go To Watchlist</a>
                     </div>
                 </div>
 
@@ -36,7 +36,7 @@ const Profile: React.FC<ProfileProps> = props => {
                     <div className="card-body">
                         {/* should display the first...50(?) characters of the blog */}
                         <h5>Lorem Ipsum</h5>
-                        <a href="#" className='btn btn-primary'>Go To Blogs</a>
+                        <a href="#" className='btn btn-outline-primary'>Go To Blogs</a>
                     </div>
                 </div>
 
@@ -48,7 +48,7 @@ const Profile: React.FC<ProfileProps> = props => {
                     src={pic} 
                     alt="img-thumbnail" />
                     <div className="card-body">
-                        <a href="#" className='btn btn-primary'>Go To Reviews</a>
+                        <a href="#" className='btn btn-outline-primary'>Go To Reviews</a>
                     </div>
                 </div>
 
@@ -60,7 +60,7 @@ const Profile: React.FC<ProfileProps> = props => {
                     src={pic} 
                     alt="img-thumbnail" />
                     <div className="card-body">
-                        <a href="#" className='btn btn-primary'>Go To Ratings</a>
+                        <a href="#" className='btn btn-outline-primary'>Go To Ratings</a>
                     </div>
                 </div>
             </div>
