@@ -3,7 +3,8 @@ import { useParams, Link } from "react-router-dom";
 
 const SearchResults = () => {
   const [results, setResults] = useState([]);
-  const { searchTerm } = useParams();
+  const { searchTerm } = useParams<ParamsProps>();
+  // const { searchTerm } = useParams();
   // const key = process.env.REACT_APP_Movie_DB_API_Key;
   const key = `14257b7461dc5f7e2f6cf229f055bf83`;
 
@@ -33,6 +34,10 @@ const SearchResults = () => {
 //history.push
 
 export default SearchResults;
+
+interface ParamsProps {
+  searchTerm: string;
+}
 
 interface SearchResults {
   searchTerm: string;

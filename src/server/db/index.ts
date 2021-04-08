@@ -25,6 +25,7 @@ import Blogs from './queries/Blogs';
 import Logs from './queries/Logs';
 import Reviews from './queries/Reviews';
 import Watchlist from './queries/Watchlist';
+import Films from './queries/Films';
 
 // exported for future use
 export default {
@@ -33,5 +34,6 @@ export default {
     Blogs,
     Logs,
     Reviews,
-    Watchlist
+    Watchlist,
+    Films
 }

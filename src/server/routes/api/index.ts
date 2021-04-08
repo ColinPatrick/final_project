@@ -8,6 +8,7 @@ import reviewsRouter from './reviews';
 import reviewRouter from './review';
 import watchlistRouter from './watchlist';
 import tokenRouter from './token';
+import filmsRouter from './films';
 
 const router = Router();
 // utilizes the bearer passport strategy for all api routes below
@@ -26,6 +27,7 @@ router.use('/reviews', reviewsRouter);
 router.use('/review', reviewRouter);
 router.use('/watchlist', watchlistRouter);
 router.use('/token', tokenRouter);
+router.use('/films', filmsRouter);
 
 
 export default router;

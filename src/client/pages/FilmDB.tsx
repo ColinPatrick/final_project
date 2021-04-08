@@ -168,7 +168,6 @@ const FilmDB = (props: FilmDBProps) => {
         fetch(`https://api.themoviedb.org/3/discover/movie?api_key=14257b7461dc5f7e2f6cf229f055bf83${sort}&include_adult=false${genre}&page=${currentPage}`)
             .then(res => res.json())
             .then(data => setMovies([...movies, ...data.results]))
-            .then(res => console.log(res))
             .then(res => setCurrentPage(currentPage + 1))
             .then(res => setIsBottom(false))
         if (currentPage == totalPages) return;
