@@ -2,6 +2,7 @@ import * as React from 'react';
 import * as Bootstrap from 'bootstrap';
 import './PagesStyles';
 import { Link, useParams } from 'react-router-dom'
+import BlogPreview from '../components/BlogPreview'
 
 const Profile: React.FC<ProfileProps> = (props) => {
     const { userid } = useParams()
@@ -33,7 +34,7 @@ const Profile: React.FC<ProfileProps> = (props) => {
             <div className="d-flex justify-content-between navi-color">
                 {/* WATCHLIST CARD */}
                 <div className="card">
-                    <h5 className='card-header'>Watchlist</h5>
+                    <h5 className='card-header text-center'>Watchlist</h5>
                     {/* img should display a random thumbnail of a movie in the watchlist */}
                     <img id='Dune'
                         className="card-img-top"
@@ -47,35 +48,41 @@ const Profile: React.FC<ProfileProps> = (props) => {
 
                 {/* BLOGS CARD */}
                 <div className="card">
-                    <h5 className='card-header'>Blogs</h5>
+                    <h5 className='card-header text-center'>Blogs</h5>
                     <div className="card-body">
                         {/* should display the first...50ish characters of the blog */}
-                        <h5>Lorem Ipsum</h5>
+                        {/* <h5>Lorem Ipsum</h5> */}
+                        {blogs.map(blog =>
+                            <BlogPreview key={`blog-preview-${blogs.id}`} />
+                        )}
                         <Link to="/Blogs" className='btn btn-outline-primary'>Go To Blogs</Link>
                     </div>
                 </div>
 
                 {/* REVIEWS CARD */}
                 <div className="card">
-                    <h5 className='card-header'>Reviews</h5>
+                    <h5 className='card-header text-center'>Reviews</h5>
                     <img id='Dune'
                         className="card-img-top"
                         src={pic}
                         alt="img-thumbnail" />
+                    {Reviews.map(Rview =>
+                        <ReviewPreview key={`review-preview-${reviews.id}`} />
+                    )}
                     <div className="card-body">
                         <Link to="/reviews" className='btn btn-outline-primary'>Go To reviews</Link>
                     </div>
                 </div>
 
-                {/* RATINGS CARD */}
+                {/* Logs CARD */}
                 <div className="card">
-                    <h5 className='card-header'>Ratings</h5>
+                    <h5 className='card-header text-center'>Logs</h5>
                     <img id='Dune'
                         className="card-img-top"
                         src={pic}
                         alt="img-thumbnail" />
                     <div className="card-body">
-                        <Link to="/ratings" className='btn btn-outline-primary'>Go To ratings</Link>
+                        <Link to="/logs" className='btn btn-outline-primary'>Go To Logs</Link>
                     </div>
                 </div>
             </div>
