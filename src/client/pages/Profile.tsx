@@ -3,20 +3,41 @@ import * as Bootstrap from 'bootstrap';
 import './PagesStyles';
 import { Link, useParams } from 'react-router-dom'
 import BlogPreview from '../components/BlogPreview'
+import Reviews from '../components/Reviews'
 
 const Profile: React.FC<ProfileProps> = (props) => {
     const { userid } = useParams()
     const [user, setUser] = React.useState({})
+    const [blogs, setBlogs] = React.useState([])
+
+    const getUser = async (req, res) => {
+        try {
+            let res = await fetch(`/api/user/${userid}`)
+            let user = await res.json()
+
+            setUser(user)
+
+        } catch (error) {
+            console.error(error)
+        }
+    }
+    const getBlogs = async (req, res) => {
+        try {
+            let res = await fetch(`/api/blogs/${userid}`)
+            let blogs = await res.json()
+
+            setBlogs(blogs)
+
+        } catch (error) {
+            console.error(error)
+        }
+
+    }
+
     React.useEffect(() => {
         (async (req, res) => {
-            try {
-                let res = await fetch(`/api/user/${userid}`)
-                let user = await res.json()
-                setUser(user)
-
-            } catch (error) {
-                console.error(error)
-            }
+            getUser(req, res)
+            getBlogs(req, res)
         })()
     }, []);
 
@@ -46,33 +67,21 @@ const Profile: React.FC<ProfileProps> = (props) => {
                     </div>
                 </div>
 
-                {/* BLOGS CARD */}
-                <div className="card">
-                    <h5 className='card-header text-center'>Blogs</h5>
-                    <div className="card-body">
-                        {/* should display the first...50ish characters of the blog */}
-                        {/* <h5>Lorem Ipsum</h5> */}
-                        {blogs.map(blog =>
-                            <BlogPreview key={`blog-preview-${blogs.id}`} />
-                        )}
-                        <Link to="/Blogs" className='btn btn-outline-primary'>Go To Blogs</Link>
-                    </div>
-                </div>
 
                 {/* REVIEWS CARD */}
-                <div className="card">
+                {/* <div className="card">
                     <h5 className='card-header text-center'>Reviews</h5>
                     <img id='Dune'
                         className="card-img-top"
                         src={pic}
                         alt="img-thumbnail" />
-                    {Reviews.map(Rview =>
+                    {Reviews.map(Review =>
                         <ReviewPreview key={`review-preview-${reviews.id}`} />
                     )}
                     <div className="card-body">
                         <Link to="/reviews" className='btn btn-outline-primary'>Go To reviews</Link>
                     </div>
-                </div>
+                </div> */}
 
                 {/* Logs CARD */}
                 <div className="card">
@@ -86,6 +95,19 @@ const Profile: React.FC<ProfileProps> = (props) => {
                     </div>
                 </div>
             </div>
+
+            {/* BLOGS CARD */}
+            <div className="row-12">
+
+                {/* should display the first...50ish characters of the blog */}
+                {/* <h5>Lorem Ipsum</h5> */}
+                {blogs.map(blog =>
+                    <BlogPreview key={`blog-preview-${blogs.id}`} blog={blog} />
+                )}
+                <Link to="/Blogs" className='btn btn-outline-primary'>Go To Blogs</Link>
+
+            </div>
+
         </main>
     )
 
