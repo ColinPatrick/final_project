@@ -37,7 +37,6 @@ const FilmDeets: React.FC<FilmDeetsProps> = props => {
                     .then(res => res.json())
                     .then(logs => {
                         setUserLogs(logs);
-                        console.log(userLogs);
                     })
             })();
         }
@@ -63,7 +62,6 @@ const FilmDeets: React.FC<FilmDeetsProps> = props => {
                     .then(res => res.json())
                     .then(watchlist => {
                         setUserWatchlist(watchlist);
-                        console.log(userWatchlist);
                     })
             })();
         }
@@ -144,9 +142,8 @@ const FilmDeets: React.FC<FilmDeetsProps> = props => {
                     body: JSON.stringify(filmInfo)
                 })
                 const logRes = await json('/api/logs', 'POST', listItem);
-                alert('Added to your list of seen films!')
+                alert('Added to your list of seen films!');
             };
-
         };
     }
 
