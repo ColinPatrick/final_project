@@ -19,4 +19,13 @@ export interface IMovie {
     backdrop_path: string;
 }
 
-
+export interface ILog {
+    id: number;
+    name: string;
+    ratings: number;
+    poster: string;
+    filmid: number;
+    review: string;
+    userid: number;
+    username: string;
+}
