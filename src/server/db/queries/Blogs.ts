@@ -2,7 +2,7 @@ import { Query } from '../';
 // all queries for the blogs table
 
 // a query to call all the blogs for a certain user
-const allUserBlogs = (userid: number) => Query('SELECT Blogs.*, User.username FROM Blogs JOIN User on User.id = Blogs.userid WHERE userid = ?', [userid]);
+const allUserBlogs = (userid: number) => Query('SELECT Blogs.*, User.username FROM Blogs JOIN User on User.id = Blogs.userid WHERE userid = ? ORDER BY Blogs.id DESC', [userid]);
 // a query to call an individual blog
 const oneBlog = (id: number) => Query('SELECT Blogs.*, User.username FROM Blogs JOIN User on User.id = Blogs.userid WHERE Blogs.id = ?', [id]);
 // a query to write a new blog
