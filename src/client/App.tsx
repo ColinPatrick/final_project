@@ -25,7 +25,6 @@ const App: React.FC<AppProps> = props => {
         <BrowserRouter>
 		<Nav 
 		loggedIn = {loggedUser} />
-		<SearchBar />
 			<Switch>
 				<Route exact path='/'>
 					<Home />
@@ -43,7 +42,7 @@ const App: React.FC<AppProps> = props => {
 				<Route exact path='/film/:filmid'>
 					<FilmDeets />
 				</Route>
-				<Route exact path={`/:searchTerm`}>
+				<Route exact path={`/search/:searchTerm`}>
 					<SearchResults />
 				</Route>
 				<Route exact path='/profile/:userid'>
