@@ -3,20 +3,7 @@ import { Link } from 'react-router-dom'
 
 
 const ReviewPreview: React.FC<ReviewPreviewProps> = ({ mostRecentReview }) => {
-    //const [mostRecentReview, setmostRecentReview] = React.useState('')
 
-    // React.useEffect(() => {
-
-    //     let getPreview = () => {
-    //         let firstHundred: string
-    //         let content = review?.content
-    //         firstHundred = content.substr(0, 100)
-    //         setmostRecentReview(`${firstHundred}...`)
-    //     }
-
-    //     getPreview()
-    // }, []
-    // )
     return (
         <div className="row-12 mt-3">
                 <h6>Most recent review</h6>

@@ -19,4 +19,8 @@ export interface IMovie {
     backdrop_path: string;
 }
 
+export interface user {
+    username: string;
+}
+
 

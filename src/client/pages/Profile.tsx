@@ -4,11 +4,12 @@ import './PagesStyles';
 import { Link, useParams } from 'react-router-dom'
 import BlogPreview from '../components/BlogPreview'
 import ReviewPreview from '../components/ReviewPreview'
+import { user } from '../utils/types'
 //import Reviews from '../components/Reviews'
 
 const Profile: React.FC<ProfileProps> = (props) => {
     const { userid } = useParams<{ userid: string }>()
-    const [user, setUser] = React.useState({})
+    const [user, setUser] = React.useState< user >()  //username error on line 74 coming from here
     const [mostRecentBlog, setMostRecentBlog] = React.useState<{ id: string }>({ id: "" })
     const [mostRecentReview, setMostRecentReview] = React.useState<{ id: string }>({ id: "" })
     const pic = 'https://images.unsplash.com/photo-1612392062335-300bb9bd3054?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2700&q=80';
@@ -41,7 +42,8 @@ const Profile: React.FC<ProfileProps> = (props) => {
 
     const getMostRecentReview = async (req, res) => {
         try {
-            let res = await fetch(`/api/reviews/${userid}`)
+            //no reviews showing.  change to blogs, works.  how to fix?  postman works.
+            let res = await fetch(`/api/reviews/${userid}`)  
             let allUserReviews = await res.json()
             let mostRecentReview = allUserReviews[0]
             setMostRecentReview(mostRecentReview)
@@ -71,7 +73,7 @@ const Profile: React.FC<ProfileProps> = (props) => {
         <main className="container">
             <section className="Jumbotron fluid">
                 <div className="col-12">
-                    <h1 className="display-1 text-center">Hello, {user?.username}!</h1>
+                    <h1 className="display-1 text-center">Hello, {user?.username}!</h1>  {/* error coming from line 11 */}
                 </div>
             </section>
 
@@ -119,13 +121,6 @@ const Profile: React.FC<ProfileProps> = (props) => {
 
 }
 
-interface ProfileProps {
-    username: string,
-    userid: number,
-    id: number,
-    mostRecentBlog: string,
-    ReviewPreview: string,
-    BlogPreview: string;
-}
+interface ProfileProps {}
 
 export default Profile;

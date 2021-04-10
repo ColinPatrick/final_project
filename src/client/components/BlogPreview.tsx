@@ -5,18 +5,6 @@ import { Link } from 'react-router-dom'
 const BlogPreview: React.FC<BlogPreviewProps> = ({mostRecentBlog}) => {
     const [bodyPreview, setBodyPreview] = React.useState('')
 
-    // React.useEffect(() => {
-
-    //     let getPreview = () => {
-    //         let firstHundred: string
-    //         let content = mostRecentBlog.content
-    //         firstHundred = content.substr(0, 100)
-    //         setBodyPreview(`${firstHundred}...`)
-    //     }
-
-    //     getPreview()
-    // }, []
-    // )
     return (
         <div className="row-12 mt-3">
                 <h6>Most recent blog post</h6>
