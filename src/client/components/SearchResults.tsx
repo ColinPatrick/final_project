@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
-import ReactLiveSearch from 'react-live-search';
 
 const SearchResults = () => {
   const [results, setResults] = useState([]);

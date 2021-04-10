@@ -24,17 +24,17 @@ const SearchBar = () => {
   return (
     <div
       id="search-bar"
-      className="font-weight-light mx-4 border-bottom border-primary font-weight-bold"
+      className="font-weight-light mx-4 d-flex flex-row font-weight-bold"
     >
       <input
-        className="form-control"
+        className="form-control mx-1"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
         onKeyPress={e => {e.key === "Enter" ? history.push(`/search/${searchTerm}`) : null}}
         placeholder="Explore films"
       />
       <Link to={`/search/${searchTerm}`}>
-        <button type="button" className="btn btn-primary align-center">
+        <button type="button" className="btn btn-primary align-center mx-1">
           Search
         </button>
       </Link>

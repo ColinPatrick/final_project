@@ -24,11 +24,12 @@ const Nav: React.FC<NavProps> = props => {
                 <NavLink className="font-weight-light mx-4" activeClassName="border-bottom border-primary font-weight-bold" to="/login">{loginLink}</NavLink>
             </div>
             <div>
-                <SearchBar />
+                {/* <SearchBar /> */}
             </div>
-            <div className="">
+            <div className="d-flex flex-row">
                 <NavLink className="font-weight-light mx-4" activeClassName="border-bottom border-primary font-weight-bold" exact to="/">Home</NavLink>
                 <NavLink className="font-weight-light mx-4" activeClassName="border-bottom border-primary font-weight-bold" exact to="/filmdb">Database</NavLink>
+                <SearchBar />
             </div>
         </nav>
     );
