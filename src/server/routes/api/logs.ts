@@ -37,6 +37,20 @@ router.post('/', isLoggedIn, async (req, res) => {
         res.status(500).json({ msg: 'Something is wrong!', e });
     }
 });
+// put request to edit the review of a log
+router.put('/:logid', isLoggedIn, async (req, res) => {
+    
+    const logid = Number(req.params.logid);
+    const newReview = req.body.review;
+
+    try {
+        const result = await db.Logs.addReview(newReview, logid);
+        res.json({msg: 'You created a new review!', result});
+    } catch(e) {
+        console.log(e);
+        res.status(500).json({ msg: 'Something is wrong!', e });
+    }
+});
 // delete request to remove a log by its id
 router.delete('/:logid', isLoggedIn, async (req, res) => {
 

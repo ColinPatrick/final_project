@@ -22,3 +22,13 @@ export interface IMovie {
 export interface user{
     username: string;
 }
+export interface ILog {
+    id: number;
+    name: string;
+    ratings: number;
+    poster: string;
+    filmid: number;
+    review: string;
+    userid: number;
+    username: string;
+}
