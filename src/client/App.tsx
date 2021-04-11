@@ -15,6 +15,9 @@ import Watchlist from './pages/Watchlist';
 import SingleReview from './pages/SingleReview';
 import ComposeReview from './pages/ComposeReview';
 import ReviewAdmin from './pages/ReviewAdmin';
+import SingleBlog from './pages/SingleBlog';
+import ComposeBlog from './pages/ComposeBlog';
+import BlogAdmin from './pages/BlogAdmin';
 
 // App FC creates and outlines the front end routes
 // Nav component above all routes creates a Navbar that remains at the top of the page
@@ -23,7 +26,6 @@ const App: React.FC<AppProps> = props => {
 	const [loggedUser, setLoggedUser] = React.useState<boolean>(false);
 
 	const updateLoggedUser = (param: boolean) => {
-		console.log(param);
 		setLoggedUser(param);
 	};
 
@@ -71,6 +73,15 @@ const App: React.FC<AppProps> = props => {
 				</Route>
 				<Route exact path='/review/admin/:logid'>
 					<ReviewAdmin />
+				</Route>
+				<Route exact path='/blog/:blogid'>
+					<SingleBlog />
+				</Route>
+				<Route exact path='/blog/compose'>
+					<ComposeBlog />
+				</Route>
+				<Route exact path='/blog/admin/:blogid'>
+					<BlogAdmin />
 				</Route>
 			</Switch>
 		</BrowserRouter>

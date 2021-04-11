@@ -13,10 +13,10 @@ const LoggedFilms: React.FC<LoggedFilmsProps> = props => {
 
     const [loggedFilms, setLoggedFilms] = React.useState<ILog[]>([]);
     const [isUserAdmin, setIsUserAdmin] = React.useState<boolean>(false);
+    const [author, setAuthor] = React.useState<string>('');
     const [reloadCount, setReloadCount] = React.useState<number>(1);
 
     React.useEffect(() => {
-        console.log(userid);
         fetch(`/api/logs/${userid}`)
         .then(res => res.json())
         .then(logs => setLoggedFilms(logs))
@@ -28,6 +28,14 @@ const LoggedFilms: React.FC<LoggedFilmsProps> = props => {
         } else {
             console.log('This user is not the admin of this page');
         }
+    }, [reloadCount]);
+
+    React.useEffect(() => {
+        (async () => {
+            const res = await fetch(`/api/user/${userid}`)
+            const watchlistAuthor = await res.json();
+            setAuthor(watchlistAuthor.username);
+        })();
     }, [reloadCount]);
 
     const handleDelete = async (logid: number) => {
@@ -45,7 +53,10 @@ const LoggedFilms: React.FC<LoggedFilmsProps> = props => {
     return (
         <main className="container">
             <section className="row">
-                <div className="w-100 d-flex justify-content-center">
+                <div className="w-100 d-flex justify-content-center flex-wrap">
+                <div className="col-md-12 d-flex justify-content-center mb-3">
+                    <h1 className="my-4">Logged Films Seen By {author}:</h1>
+                </div>
                     <div className="col md-10 d-flex justify-content-center flex-wrap">
                         {loggedFilms.map(log => (
                             <div key={nanoid()} className="col-md-2 rounded shadow border overflow-hidden d-flex justify-content-center flex-wrap mx-1 my-2 pb-3">

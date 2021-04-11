@@ -101,7 +101,7 @@ const FilmDeets: React.FC<FilmDeetsProps> = props => {
                 const filmRes = await fetch('/api/films', {
                     method: 'POST',
                     headers: {
-                        'Content-Type':'application/json'
+                        'Content-Type': 'application/json'
                     },
                     body: JSON.stringify(filmInfo)
                 })
@@ -137,7 +137,7 @@ const FilmDeets: React.FC<FilmDeetsProps> = props => {
                 const filmRes = await fetch('/api/films', {
                     method: 'POST',
                     headers: {
-                        'Content-Type':'application/json'
+                        'Content-Type': 'application/json'
                     },
                     body: JSON.stringify(filmInfo)
                 })
@@ -168,21 +168,25 @@ const FilmDeets: React.FC<FilmDeetsProps> = props => {
                         <div className="col-md-12 d-flex justify-content-center mt-1 mb-3">
                             <h6 className="card-text">{movieDeets.tagline}</h6>
                         </div>
-                        <div className="col-md-12 d-flex justify-content-around mt-1 mb-3">
-                            {!isFilmLogged &&
-                                <button className="btn btn-link text-dark" onClick={ handleLogFilmAdd }>Log Film</button>
-                            }
+                        {User.userid &&
+                            <div>
+                                <div className="col-md-12 d-flex justify-content-around mt-1 mb-3">
+                                    {!isFilmLogged &&
+                                        <button className="btn btn-link text-dark" onClick={handleLogFilmAdd}>Log Film</button>
+                                    }
 
-                            {!isFilmAddedToWatchlist &&
-                                <button className={`btn btn-link ${wlBtnHide} text-dark`} onClick={ handleWatchlistAdd }>Add to Watchlist</button>
-                            }
-                        </div>
-                        <div className="col-md-12 d-flex justify-content-center mt-1 mb-3">
-                            <BeautyStars
-                                value={starValue}
-                                onChange={value => setStarValue(value)}
-                            />
-                        </div>
+                                    {!isFilmAddedToWatchlist &&
+                                        <button className={`btn btn-link ${wlBtnHide} text-dark`} onClick={handleWatchlistAdd}>Add to Watchlist</button>
+                                    }
+                                </div>
+                                <div className="col-md-12 d-flex justify-content-center mt-1 mb-3">
+                                    <BeautyStars
+                                        value={starValue}
+                                        onChange={value => setStarValue(value)}
+                                    />
+                                </div>
+                            </div>
+                        }
                     </div>
                     <div className="w-100 d-flex justify-content-center mx-3">
                         <div className="col-md-12 border rounded shadow mx-1 my-3">
@@ -190,11 +194,14 @@ const FilmDeets: React.FC<FilmDeetsProps> = props => {
                             <p>{movieDeets.overview}</p>
                             <hr />
                             <h5 className="my-2">Stats:</h5>
-                            <p>STATUS: {movieDeets.status}</p>
-                            <p>RELEASED ON: {movieDeets.release_date}</p>
-                            <p>RUNTIME: {movieDeets.runtime}</p>
-                            <p>GENRES: {movieDeets.genres.map((genre: { id: number, name: string }) => (
-                                `| ${genre.name} `
+                            <p className="my-4">STATUS: {movieDeets.status}</p>
+                            <p className="my-4">RELEASED ON: {movieDeets.release_date}</p>
+                            <p className="my-4">RUNTIME: {movieDeets.runtime}</p>
+                            <p className="my-4">GENRES: | {movieDeets.genres.map((genre: { id: number, name: string }) => (
+                                ` ${genre.name} |`
+                            ))}</p>
+                            <p className="my-4">PRODUCTION COMPANIES: | {movieDeets.production_companies.map((company: {name: string }) => (
+                                ` ${company.name} |`
                             ))}</p>
                         </div>
                     </div>
@@ -210,4 +217,4 @@ interface ParamsProps {
     filmid: string
 }
 
-export default withRouter (FilmDeets);
+export default withRouter(FilmDeets);

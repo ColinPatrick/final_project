@@ -1,5 +1,5 @@
 export interface NewUser {
-    name: string;
+    username: string;
     email: string;
     password: string;
 }
@@ -17,6 +17,10 @@ export interface IMovie {
     production_companies: any;
     overview: string;
     backdrop_path: string;
+}
+
+export interface user {
+    username: string;
 }
 
 export interface ILog {

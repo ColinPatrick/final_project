@@ -24,13 +24,11 @@ const Login: React.FC<LoginProps> = props => {
                 email: email,
                 password: password
             });
-            console.log(result);
 
             if(result) {
                 SetAccessToken(result.token, { userid: result.userid, role: result.role });
                 const token = localStorage.getItem('token');
                 setToken(token);
-                console.log(localStorage.getItem('token'));
                 props.loginHandler(true);
                 props.history.push('/');               
             } else {
@@ -50,12 +48,6 @@ const Login: React.FC<LoginProps> = props => {
         });
         setToken('');
         localStorage.clear();
-        // localStorage.removeItem("userid");
-        // localStorage.removeItem("role");
-        // User = {
-        //     userid: localStorage.getItem('userid') || null,
-        //     role: localStorage.getItem('role') || null
-        // };
         props.loginHandler(false);
         props.history.push('/');
         location.reload();
