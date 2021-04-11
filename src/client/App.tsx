@@ -60,7 +60,7 @@ const App: React.FC<AppProps> = props => {
 				<Route exact path='/watchlist/:userid'>
 					<Watchlist />
 				</Route>
-				<Route exact path='/reviews/:userid'>
+				<Route exact path='/reviews/:userid'>  {/* link to this for reviews page*/}
 					<Reviews />
 				</Route>
 				<Route exact path='/review/:logid'>

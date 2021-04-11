@@ -32,3 +32,7 @@ export interface ILog {
     userid: number;
     username: string;
 }
+
+export interface user{
+    username: string;
+}
