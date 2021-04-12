@@ -9,6 +9,7 @@ import FilmDeets from './pages/FilmDeets';
 import SearchBar from "./components/SearchBar";
 import SearchResults from "./components/SearchResults";
 import Profile from './pages/Profile';
+import Blogs from './pages/Blogs';
 
 // App FC creates and outlines the front end routes
 // Nav component above all routes creates a Navbar that remains at the top of the page
@@ -43,11 +44,14 @@ const App: React.FC<AppProps> = props => {
 				<Route exact path='/film/:filmid'>
 					<FilmDeets />
 				</Route>
-				<Route exact path={`/:searchTerm`}>
+				<Route exact path={`/search/:searchTerm`}>
 					<SearchResults />
 				</Route>
 				<Route exact path='/profile/:userid'>
 					<Profile />
+				</Route>
+				<Route exact path='/profile/:userid/blogs'>
+					<Blogs />
 				</Route>
 			</Switch>
 		</BrowserRouter>

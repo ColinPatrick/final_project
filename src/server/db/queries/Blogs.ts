@@ -1,6 +1,7 @@
 import { Query } from '../';
 // all queries for the blogs table
 
+const allBlogs = () => Query("select * from Blogs join User on Blogs.userid = User.id")
 // a query to call all the blogs for a certain user
 const allUserBlogs = (userid: number) => Query('SELECT Blogs.*, User.username FROM Blogs JOIN User on User.id = Blogs.userid WHERE userid = ?', [userid]);
 // a query to call an individual blog
@@ -13,6 +14,7 @@ const updateBlog = (editBlog: {title: string; content: string }, id: number) => 
 const removeBlog = (id: number) => Query('DELETE FROM Blogs WHERE id = ?', [id]);
 //all queries are exported to be used in the blogs api route
 export default {
+    allBlogs,
     allUserBlogs,
     oneBlog,
     insertBlog,
