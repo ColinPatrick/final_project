@@ -55,15 +55,15 @@ const LoggedFilms: React.FC<LoggedFilmsProps> = props => {
             <section className="row">
                 <div className="w-100 d-flex justify-content-center flex-wrap">
                 <div className="col-md-12 d-flex justify-content-center mb-3">
-                    <h1 className="my-4">Logged Films Seen By {author}:</h1>
+                    <h1 className="text-white my-4">Logged Films Seen By {author}:</h1>
                 </div>
                     <div className="col md-10 d-flex justify-content-center flex-wrap">
                         {loggedFilms.map(log => (
-                            <div key={nanoid()} className="col-md-2 rounded shadow border overflow-hidden d-flex justify-content-center flex-wrap mx-1 my-2 pb-3">
-                                <div className="w-100 d-flex justify-content-center">
-                                    <Link className="h6 text-truncate text-dark pt-2" to={`/film/${log.filmid}`}>{log.name}</Link>
+                            <div key={nanoid()} className="col-md-2 rounded shadow border overflow-hidden d-flex justify-content-center flex-wrap bg-white mx-2 my-2 pb-3">
+                                <div className="w-100 d-flex justify-content-center py-1">
+                                    <Link className="h6 font-weight-bold text-truncate text-dark pt-2" to={`/film/${log.filmid}`}>{log.name}</Link>
                                 </div>
-                                <div className="w-100 d-flex justify-content-center">
+                                <div className="w-100 d-flex justify-content-center pb-1">
                                     <img src={`${posterLink}${log.poster}`} alt="poster" />
                                 </div>
                                 <div className="w-100 d-flex justify-content-center my-2">
@@ -75,13 +75,13 @@ const LoggedFilms: React.FC<LoggedFilmsProps> = props => {
                                     />
                                 </div>
                                 {log.review &&
-                                    <div className="w-100 d-flex justify-content-center">
-                                        <Link className="text-dark" to={`/review/${log.id}`}>Read Review</Link>
+                                    <div className="w-100 d-flex justify-content-center pt-1">
+                                        <Link className="text-success" to={`/review/${log.id}`}>Read Review</Link>
                                     </div>                                
                                 }
                                 {!log.review && User.userid &&
-                                    <div className="w-100 d-flex justify-content-center">
-                                        <Link className="text-dark" to={`/review/compose/${log.id}`}>Write Review</Link>
+                                    <div className="w-100 d-flex justify-content-center pt-1">
+                                        <Link className="text-primary" to={`/review/compose/${log.id}`}>Write Review</Link>
                                     </div>
                                 }
                                 {isUserAdmin &&

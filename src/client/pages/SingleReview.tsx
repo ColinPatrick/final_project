@@ -40,13 +40,13 @@ const SingleReview: React.FC<SingleReviewProps> = props => {
             <section className="row d-flex justify-content-center">
                 <div className="col-md-12 d-flex justify-content-center flex-wrap my-5">
                     <div className="w-100 d-flex justify-content-center">
-                        <h1 className="text-center my-3">A Review of {filmInfo.name}</h1>
+                        <h1 className="text-center text-white my-3">A Review of {filmInfo.name}</h1>
                     </div>
                     <div className="w-100 d-flex justify-content-center my-3">
                         <img src={`${posterLink}${filmInfo.poster}`} alt="moviePoster"/>
                     </div>
                     <div className="w-100 d-flex justify-content-center my-2">
-                        <h4>By {filmInfo.username}</h4>
+                        <h4 className="text-white">By {filmInfo.username}</h4>
                     </div>
                     <div className="card w-50 d-flex justify-content-center rounded shadow mt-3">
                         <div className="w-100 d-flex justify-content-center">

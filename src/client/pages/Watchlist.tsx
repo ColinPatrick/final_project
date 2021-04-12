@@ -48,17 +48,17 @@ const Watchlist: React.FC<WatchlistProps> = props => {
     };
 
     return (
-        <main className="container">
-            <section className="row">
+        <main className="container d-flex justify-content-center">
+            <section className="row d-flex justify-content-center">
                 <div className="w-100 d-flex justify-content-center flex-wrap">
                     <div className="col-md-12 d-flex justify-content-center mb-3">
-                        <h1 className="my-4">{author}'s Watchlist':</h1>
+                        <h1 className="text-white my-4">{author}'s Watchlist:</h1>
                     </div>
-                    <div className="col md-10 d-flex justify-content-center flex-wrap">
+                    <div className="col-md-12 d-flex justify-content-center flex-wrap">
                         {watchlistFilms.map(log => (
-                            <div key={nanoid()} className="col-md-2 rounded shadow border overflow-hidden d-flex justify-content-center flex-wrap mx-1 my-2 pb-3">
+                            <div key={nanoid()} className="col-md-2 rounded shadow border overflow-hidden d-flex justify-content-center flex-wrap bg-white mx-1 my-2 pt-1 pb-3">
                                 <div className="w-100 d-flex justify-content-center">
-                                    <Link className="h6 text-truncate text-dark pt-2" to={`/film/${log.filmid}`}>{log.name}</Link>
+                                    <Link className="h6 font-weight-bold text-truncate text-dark pt-2" to={`/film/${log.filmid}`}>{log.name}</Link>
                                 </div>
                                 <div className="w-100 d-flex justify-content-center">
                                     <img src={`${posterLink}${log.poster}`} alt="poster" />

@@ -24,7 +24,7 @@ const SearchBar = () => {
         placeholder="Explore films"
       />
       <Link to={`/search/${searchTerm}`}>
-        <button type="button" className="btn btn-primary align-center mx-1">
+        <button type="button" className="btn btn-outline-light align-center mx-1">
           Search
         </button>
       </Link>

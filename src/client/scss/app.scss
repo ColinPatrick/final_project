@@ -2,13 +2,17 @@ $theme-colors: (
     'primary': #0091ea //Covalence Blue!  :D
 );
 
+body {
+    background-color: #0091ea;
+}
+
 .profileLinkPic {
     height: 70%;
     width: 100%;
 }
 
 .profileLinkPic2 {
-    height: 70%;
+    height: 75%;
     width: 100%;
 }
 

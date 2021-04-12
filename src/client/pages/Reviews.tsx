@@ -31,13 +31,13 @@ const Reviews: React.FC<ReviewsProps> = props => {
         <main className="container d-flex justify-content-center">
             <div className="row d-flex justify-content-center">
                 <div className="col-md-12 d-flex justify-content-center mb-3">
-                    <h1 className="my-4">All reviews by {author}:</h1>
+                    <h1 className="text-white my-4">All reviews by {author}:</h1>
                 </div>
                 <div className="col-md-12 d-flex justify-content-center flex-column">
                     {filmLogs.map((movie: ILog) => (
                         <div key={`film-review-for-${movie.id}`} className="w-100 d-flex justify-content-center">
                             {movie.review &&
-                                <div className="w-50 d-flex flex-wrap justify-content-center border rounded shadow my-2">
+                                <div className="w-50 d-flex flex-wrap justify-content-center border rounded shadow bg-white my-2">
                                     <div className="col-md-4 d-flex justify-content-start border-bottom">
                                         <img className="py-3" src={`${posterLink}${movie.poster}`} alt="reviewImage"/>
                                     </div>

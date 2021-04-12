@@ -24,7 +24,7 @@ const SearchResults = () => {
       <main className="container d-flex justify-content-center">
         <div className="row d-flex justify-content-center">
           <div className="col-md-12 d-flex justify-content-center flex-wrap m-1">
-            <h1>Search Results</h1>
+            <h1 className="text-white">Search Results</h1>
           </div>
           <div className="col-md-10 d-flex justify-content-between my-2"></div>
 
@@ -37,7 +37,7 @@ const SearchResults = () => {
                 className="col-md-2 text-truncated card rounded shadow border overflow-hidden d-flex mx-1 my-2 pb-3"
               >
                 <div className="card-body">
-                <Link className="h6 text-truncate text-dark pt-2" 
+                <Link className="h6 font-weight-bold text-truncate text-dark pt-2" 
                 to={`/film/${result.id}`}>{result.title}</Link>
                   <img
                     src={`https://image.tmdb.org/t/p/w92${result.poster_path}`}

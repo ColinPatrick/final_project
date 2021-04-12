@@ -177,18 +177,18 @@ const FilmDB = (props: FilmDBProps) => {
         <main className="container d-flex justify-content-center">
             <div className="row d-flex justify-content-center">
                 <div className="col-md-12 d-flex justify-content-center flex-wrap m-1">
-                    <h1>Database</h1>
+                    <h1 className="text-white">Database</h1>
                 </div>
                 <div className="col-md-10 d-flex justify-content-between my-2">
                     <div className="app col-md-4 mx-2 mt-2 mb-4">
-                        <h6>Sort By:</h6>
+                        <h6 className="text-white">Sort By:</h6>
                         <Select
                             options={sortOptions}
                             onChange={handleSortChange}
                         />
                     </div>
                     <div className="app col-md-4 mx-2 mt-2 mb-4">
-                        <h6>Filter Genre:</h6>
+                        <h6 className="text-white">Filter Genre:</h6>
                         <Select
                             options={genreOptions}
                             onChange={handleGenreChange}
@@ -201,7 +201,7 @@ const FilmDB = (props: FilmDBProps) => {
                         .filter(movie => movie.poster_path !== null)
                         .map((movie: { id: any; title: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal; poster_path: any; overview: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal; }) => (
                             <div key={nanoid()} className="col-md-2 card rounded shadow border overflow-hidden d-flex mx-1 my-2 pb-3">
-                                <Link className="h6 text-truncate text-dark pt-2" to={`/film/${movie.id}`}>{movie.title}</Link>
+                                <Link className="h6 font-weight-bold text-truncate text-dark pt-2" to={`/film/${movie.id}`}>{movie.title}</Link>
                                 <img src={`${posterLink}${movie.poster_path}`} alt="poster" />
                             </div>
                         ))}
