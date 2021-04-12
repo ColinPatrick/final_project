@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ILog } from '../utils/types'
+import { ILog } from '../utils/types';
 import { json, User } from '../utils/api';
 import { nanoid } from 'nanoid';
 import BeautyStars from 'beauty-stars';
@@ -96,12 +96,12 @@ const LoggedFilms: React.FC<LoggedFilmsProps> = props => {
             </section>
         </main>
     );
-}
+};
 
-interface LoggedFilmsProps {}
+interface LoggedFilmsProps {};
 
 interface ParamsProps {
     userid: string;
-}
+};
 
 export default LoggedFilms;

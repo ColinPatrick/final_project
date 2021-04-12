@@ -25,8 +25,8 @@ const Register: React.FC<RegisterProps> = props => {
             props.history.push('/login');
         } else {
             alert('You are currently signed in. Please sign out to create a new account.');
-        }
-    }
+        };
+    };
 
     return (
         <main className="container">
@@ -50,8 +50,8 @@ const Register: React.FC<RegisterProps> = props => {
                 </section>
             </main>
     );
-}
+};
 
-interface RegisterProps extends RouteComponentProps {}
+interface RegisterProps extends RouteComponentProps {};
 
-export default withRouter (Register)
+export default withRouter (Register);

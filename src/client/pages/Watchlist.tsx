@@ -17,7 +17,7 @@ const Watchlist: React.FC<WatchlistProps> = props => {
 
     React.useEffect(() => {
         (async () => {
-            let res = await fetch(`/api/watchlist/${userid}`)
+            let res = await fetch(`/api/watchlist/${userid}`);
             let watchlist = await res.json();
             setWatchlistFilms(watchlist);
         })();
@@ -27,13 +27,13 @@ const Watchlist: React.FC<WatchlistProps> = props => {
         if (User.userid == userid) {
             setIsUserAdmin(true);
         } else {
-            console.log('The admin of this watchlist is not logged in.')
+            console.log('The admin of this watchlist is not logged in.');
         }
     }, [reloadCount]);
 
     React.useEffect(() => {
         (async () => {
-            const res = await fetch(`/api/user/${userid}`)
+            const res = await fetch(`/api/user/${userid}`);
             const watchlistAuthor = await res.json();
             setAuthor(watchlistAuthor.username);
         })();
@@ -42,7 +42,7 @@ const Watchlist: React.FC<WatchlistProps> = props => {
     const handleDelete = async (logid: number) => {
         let res = await json(`/api/watchlist/${logid}`, 'DELETE');
         if (res) {
-            alert('You removed this item from your watchlist!')
+            alert('You removed this item from your watchlist!');
             setReloadCount(reloadCount + 1);
         };
     };
@@ -76,12 +76,12 @@ const Watchlist: React.FC<WatchlistProps> = props => {
             </section>
         </main>
     );
-}
+};
 
 interface ParamsProps {
     userid: string
-}
+};
 
-interface WatchlistProps {}
+interface WatchlistProps {};
 
 export default Watchlist;

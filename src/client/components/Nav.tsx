@@ -2,7 +2,6 @@ import * as React from 'react';
 import { NavLink } from 'react-router-dom';
 import { User } from '../utils/api';
 import SearchBar from "./SearchBar";
-import SearchResults from "./SearchResults";
 
 //Nav FC renders a navbar at the top of the page that allows user to switch between 'Home' and 'Compose' page views
 const Nav: React.FC<NavProps> = props => {
@@ -27,10 +26,10 @@ const Nav: React.FC<NavProps> = props => {
             </div>
         </nav>
     );
-}
+};
 
 interface NavProps {
     loggedIn: boolean
-}
+};
 // Nav is exported
 export default Nav;

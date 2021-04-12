@@ -25,7 +25,7 @@ const ComposeReview: React.FC<ComposeReviewProps> = props => {
     React.useEffect(() => {
         if (!User.userid) {
             setNoUser(true);
-        }
+        };
     });
 
     const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -38,11 +38,9 @@ const ComposeReview: React.FC<ComposeReviewProps> = props => {
         let reviewRes = await json(`/api/logs/${logid}`, 'PUT', reviewObject);
         if (reviewRes) {
             props.history.push(`/review/${logid}`);
-        } else {
-            console.log('wut');
-        }
+        };
         
-    }
+    };
 
     if(noUser) {
         return (
@@ -53,14 +51,14 @@ const ComposeReview: React.FC<ComposeReviewProps> = props => {
                     </div>
                 </div>
             </div>
-        )
-    }
+        );
+    };
 
     if(!filmLog) {
         return (
             <h1>Loading...</h1>
-        )
-    }
+        );
+    };
 
     return (
         <main className="container">
@@ -94,12 +92,12 @@ const ComposeReview: React.FC<ComposeReviewProps> = props => {
             </section>
         </main>
     );
-}
+};
 
 interface ParamsProps {
     logid: string
-}
+};
 
-interface ComposeReviewProps extends RouteComponentProps {}
+interface ComposeReviewProps extends RouteComponentProps {};
 
 export default withRouter (ComposeReview);

@@ -23,8 +23,8 @@ const Home: React.FC<HomeProps> = props => {
             </section>
         </main>
     );
-}
+};
 
-interface HomeProps {}
+interface HomeProps {};
 
 export default Home;

@@ -40,7 +40,7 @@ const ReviewAdmin: React.FC<ReviewAdminProps> = props => {
             <div className="container d-flex justify-content-center my-2">
                 <div className="row d-flex justify-content-center my-2">
                     <div className="col-md-8 d-flex justify-content-center my-2">
-                        <h1 className="my-3">You are not logged in.</h1>
+                        <h1 className="my-3">You are not logged in. Please go to the login page to sign in.</h1>
                     </div>
                 </div>
             </div>
@@ -50,8 +50,8 @@ const ReviewAdmin: React.FC<ReviewAdminProps> = props => {
     if(!filmLog) {
         return (
             <h1>Loading...</h1>
-        )
-    }
+        );
+    };
 
     const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
@@ -65,8 +65,8 @@ const ReviewAdmin: React.FC<ReviewAdminProps> = props => {
             props.history.push(`/review/${logid}`);
         } else {
             console.log('wut');
-        }
-    }
+        };
+    };
 
     const handleDelete = async (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
@@ -78,10 +78,8 @@ const ReviewAdmin: React.FC<ReviewAdminProps> = props => {
         let reviewRes = await json(`/api/logs/${logid}`, 'PUT', reviewObject);
         if (reviewRes) {
             props.history.push(`/reviews/${filmLog.userid}`);
-        } else {
-            console.log('wut');
-        }
-    }
+        };
+    };
 
     return (
         <main className="container">
@@ -122,6 +120,6 @@ interface ParamsProps {
     logid: string
 };
 
-interface ReviewAdminProps extends RouteComponentProps {}
+interface ReviewAdminProps extends RouteComponentProps {};
 
 export default withRouter (ReviewAdmin);

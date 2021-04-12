@@ -13,7 +13,7 @@ const Reviews: React.FC<ReviewsProps> = props => {
 
     React.useEffect(() => {
         (async () => {
-            const res = await fetch(`/api/logs/${userid}`)
+            const res = await fetch(`/api/logs/${userid}`);
             const logs = await res.json();
             setFilmLogs(logs);
         })();
@@ -21,7 +21,7 @@ const Reviews: React.FC<ReviewsProps> = props => {
 
     React.useEffect(() => {
         (async () => {
-            const res = await fetch(`/api/user/${userid}`)
+            const res = await fetch(`/api/user/${userid}`);
             const reviewAuthor = await res.json();
             setAuthor(reviewAuthor.username);
         })();
@@ -55,12 +55,12 @@ const Reviews: React.FC<ReviewsProps> = props => {
             </div>
         </main>
     );
-}
+};
 
-interface ReviewsProps {}
+interface ReviewsProps {};
 
 interface ParamsProps {
     userid: string;
-}
+};
 
 export default Reviews;

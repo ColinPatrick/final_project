@@ -33,3 +33,12 @@ export interface ILog {
     userid: number;
     username: string;
 }
+
+export interface IBlog {
+    id: number;
+    title: string;
+    content: string;
+    userid: number;
+    username: string;
+    _created: Date;
+}

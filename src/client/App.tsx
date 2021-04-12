@@ -1,12 +1,11 @@
 import * as React from 'react';
-import { BrowserRouter, Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Nav from './components/Nav';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import FilmDB from './pages/FilmDB';
 import FilmDeets from './pages/FilmDeets';
-import SearchBar from "./components/SearchBar";
 import SearchResults from "./components/SearchResults";
 import Profile from './pages/Profile';
 import LoggedFilms from './pages/LoggedFilms';
@@ -15,6 +14,7 @@ import Watchlist from './pages/Watchlist';
 import SingleReview from './pages/SingleReview';
 import ComposeReview from './pages/ComposeReview';
 import ReviewAdmin from './pages/ReviewAdmin';
+import Blogs from './pages/Blogs';
 import SingleBlog from './pages/SingleBlog';
 import ComposeBlog from './pages/ComposeBlog';
 import BlogAdmin from './pages/BlogAdmin';
@@ -74,10 +74,13 @@ const App: React.FC<AppProps> = props => {
 				<Route exact path='/review/admin/:logid'>
 					<ReviewAdmin />
 				</Route>
+				<Route exact path='/blogs/:userid'>
+					<Blogs />
+				</Route>
 				<Route exact path='/blog/:blogid'>
 					<SingleBlog />
 				</Route>
-				<Route exact path='/blog/compose'>
+				<Route exact path='/new/blog/compose'>
 					<ComposeBlog />
 				</Route>
 				<Route exact path='/blog/admin/:blogid'>

@@ -20,7 +20,7 @@ const FilmDB = (props: FilmDBProps) => {
         { value: 4, label: 'Release (Descending)' },
         { value: 5, label: 'Title (Ascending)' },
         { value: 6, label: 'Title (Descending)' }
-    ]
+    ];
 
     const genreOptions = [
         { value: 0, label: 'Select...' },
@@ -43,7 +43,7 @@ const FilmDB = (props: FilmDBProps) => {
         { value: 17, label: 'Thriller' },
         { value: 18, label: 'War' },
         { value: 19, label: 'Western' }
-    ]
+    ];
 
     const posterLink = "https://image.tmdb.org/t/p/w92";
 
@@ -58,14 +58,14 @@ const FilmDB = (props: FilmDBProps) => {
                 .then(res => res.json())
                 .then(allMovies => setMovies(allMovies.results))
                 .catch(error => console.log(error))
-        }
-    }, [sort, genre])
+        };
+    }, [sort, genre]);
 
     useEffect(() => {
         if (isBottom) {
             addItems();
         }
-    }, [isBottom])
+    }, [isBottom]);
 
     const handleScroll = () => {
         const scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
@@ -161,8 +161,8 @@ const FilmDB = (props: FilmDBProps) => {
         } else if (obj.value == 19) {
             setGenre('&with_genres=37')
             setCurrentPage(2);
-        }
-    }
+        };
+    };
 
     const addItems = async () => {
         fetch(`https://api.themoviedb.org/3/discover/movie?api_key=14257b7461dc5f7e2f6cf229f055bf83${sort}&include_adult=false${genre}&page=${currentPage}`)
@@ -171,7 +171,7 @@ const FilmDB = (props: FilmDBProps) => {
             .then(res => setCurrentPage(currentPage + 1))
             .then(res => setIsBottom(false))
         if (currentPage == totalPages) return;
-    }
+    };
 
     return (
         <main className="container d-flex justify-content-center">
@@ -213,7 +213,7 @@ const FilmDB = (props: FilmDBProps) => {
 
 };
 
-interface FilmDBProps { }
+interface FilmDBProps { };
 
 
 export default FilmDB;

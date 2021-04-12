@@ -33,12 +33,12 @@ const Login: React.FC<LoginProps> = props => {
                 props.history.push('/');               
             } else {
                 alert('The email or password you have entered does not match any of our registered users.');               
-            }
+            };
 
         } catch(e) {
             console.log(e);
             throw(e);
-        }
+        };
     };
 
     const handleSignOut = async (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -51,7 +51,7 @@ const Login: React.FC<LoginProps> = props => {
         props.loginHandler(false);
         props.history.push('/');
         location.reload();
-    }
+    };
 
     if(logoutScreen == false) {
         return (
@@ -95,12 +95,12 @@ const Login: React.FC<LoginProps> = props => {
                     </div>
                 </div>
             </main>
-        )
+        );
     };
-}
+};
 
 interface LoginProps extends RouteComponentProps {
     loginHandler: any
-}
+};
 
 export default withRouter (Login);

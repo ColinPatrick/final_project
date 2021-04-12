@@ -24,16 +24,16 @@ const SingleReview: React.FC<SingleReviewProps> = props => {
             if (User.userid == filmInfo.userid) {
                 setIsAdmin(true);
             } else {
-                console.log('User is not admin.')
-            }
-        }
+                console.log('User is not admin.');
+            };
+        };
     }, [filmInfo]);
 
     if (!filmInfo) {
         return (
             <h1>Loading...</h1>
-        )
-    }
+        );
+    };
 
     return (
         <main className="container d-flex justify-content-center">
@@ -68,6 +68,6 @@ interface ParamsProps {
     logid: string
 };
 
-interface SingleReviewProps {}
+interface SingleReviewProps {};
 
 export default SingleReview;

@@ -53,9 +53,9 @@ const FilmDeets: React.FC<FilmDeetsProps> = props => {
                 setIsFilmLogged(true);
             } else {
                 console.log('This film is not one of your logged movies.');
-            }
-        })
-    }, [userLogs])
+            };
+        });
+    }, [userLogs]);
 
     React.useEffect(() => {
         if (User.userid) {
@@ -67,7 +67,7 @@ const FilmDeets: React.FC<FilmDeetsProps> = props => {
                         setUserWatchlist(watchlist);
                     })
             })();
-        }
+        };
     }, []);
 
     React.useEffect(() => {
@@ -88,29 +88,28 @@ const FilmDeets: React.FC<FilmDeetsProps> = props => {
             let listItem: { userid: number, filmid: number } = {
                 userid: User.userid,
                 filmid: Number(filmid)
-            }
-            const res = await fetch(`/api/films/${filmid}`)
-            const isFilmPresent = await res.json()
+            };
+            const res = await fetch(`/api/films/${filmid}`);
+            const isFilmPresent = await res.json();
 
             if (isFilmPresent) {
                 const watchlistRes = await json('/api/watchlist', 'POST', listItem);
-                alert('Added to your watchlist!')
+                alert('Added to your watchlist!');
             } else {
                 let filmInfo: { filmid: number, name: string, poster: string } = {
                     filmid: movieDeets.id,
                     name: movieDeets.title,
                     poster: movieDeets.poster_path
-                }
+                };
                 const filmRes = await fetch('/api/films', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify(filmInfo)
-                })
-                console.log(filmRes);
+                });
                 const watchlistRes = await json('/api/watchlist', 'POST', listItem);
-                alert('Added to your watchlist!')
+                alert('Added to your watchlist!');
             };
 
         };
@@ -124,35 +123,35 @@ const FilmDeets: React.FC<FilmDeetsProps> = props => {
                 userid: User.userid,
                 filmid: Number(filmid),
                 ratings: Number(starValue)
-            }
-            const res = await fetch(`/api/films/${filmid}`)
-            const isFilmPresent = await res.json()
+            };
+            const res = await fetch(`/api/films/${filmid}`);
+            const isFilmPresent = await res.json();
 
             if (isFilmPresent) {
                 const logRes = await json('/api/logs', 'POST', listItem);
-                alert('Added to your list of seen films!')
+                alert('Added to your list of seen films!');
             } else {
                 let filmInfo: { filmid: number, name: string, poster: string } = {
                     filmid: movieDeets.id,
                     name: movieDeets.title,
                     poster: movieDeets.poster_path
-                }
+                };
                 const filmRes = await fetch('/api/films', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify(filmInfo)
-                })
+                });
                 const logRes = await json('/api/logs', 'POST', listItem);
                 alert('Added to your list of seen films!');
             };
         };
-    }
+    };
 
     if (!movieDeets) {
         return <h1>Loading...</h1>
-    }
+    };
 
     return (
         <main className="container">
@@ -164,7 +163,7 @@ const FilmDeets: React.FC<FilmDeetsProps> = props => {
                 }
                 {!movieDeets.backdrop_path &&
                     <div className="d-flex justify-content-center mb-2">
-                        <img src={`${backupBackdrop}`} alt="backupDrop" style={{height: 720, width: 1500}} />
+                        <img src={`${backupBackdrop}`} alt="backupDrop" style={{ height: 720, width: 1500 }} />
                     </div>
                 }
                 <div id="filmDataContainer" className="d-flex justify-content-between">
@@ -228,12 +227,12 @@ const FilmDeets: React.FC<FilmDeetsProps> = props => {
             </section>
         </main>
     );
-}
+};
 
-interface FilmDeetsProps extends RouteComponentProps { }
+interface FilmDeetsProps extends RouteComponentProps { };
 
 interface ParamsProps {
     filmid: string
-}
+};
 
 export default withRouter(FilmDeets);
