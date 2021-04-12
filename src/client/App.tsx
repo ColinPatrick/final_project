@@ -89,8 +89,8 @@ const App: React.FC<AppProps> = props => {
 			</Switch>
 		</BrowserRouter>
     );
-}
+};
 
-interface AppProps {}
+interface AppProps {};
 // // App is exported
 export default App;
