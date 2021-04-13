@@ -119,33 +119,37 @@ const FilmDeets: React.FC<FilmDeetsProps> = props => {
         if (!User.userid) {
             props.history.push('/login');
         } else {
-            let listItem: { userid: number, filmid: number, ratings: number } = {
-                userid: User.userid,
-                filmid: Number(filmid),
-                ratings: Number(starValue)
-            };
-            const res = await fetch(`/api/films/${filmid}`);
-            const isFilmPresent = await res.json();
-
-            if (isFilmPresent) {
-                const logRes = await json('/api/logs', 'POST', listItem);
-                alert('Added to your list of seen films!');
+            if (starValue == 0) {
+                alert("You must rate this film before logging it.")
             } else {
-                let filmInfo: { filmid: number, name: string, poster: string } = {
-                    filmid: movieDeets.id,
-                    name: movieDeets.title,
-                    poster: movieDeets.poster_path
+                let listItem: { userid: number, filmid: number, ratings: number } = {
+                    userid: User.userid,
+                    filmid: Number(filmid),
+                    ratings: Number(starValue)
                 };
-                const filmRes = await fetch('/api/films', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(filmInfo)
-                });
-                const logRes = await json('/api/logs', 'POST', listItem);
-                alert('Added to your list of seen films!');
-            };
+                const res = await fetch(`/api/films/${filmid}`);
+                const isFilmPresent = await res.json();
+    
+                if (isFilmPresent) {
+                    const logRes = await json('/api/logs', 'POST', listItem);
+                    alert('Added to your list of seen films!');
+                } else {
+                    let filmInfo: { filmid: number, name: string, poster: string } = {
+                        filmid: movieDeets.id,
+                        name: movieDeets.title,
+                        poster: movieDeets.poster_path
+                    };
+                    const filmRes = await fetch('/api/films', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(filmInfo)
+                    });
+                    const logRes = await json('/api/logs', 'POST', listItem);
+                    alert('Added to your list of seen films!');
+                };
+            }; 
         };
     };
 

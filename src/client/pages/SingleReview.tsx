@@ -54,7 +54,7 @@ const SingleReview: React.FC<SingleReviewProps> = props => {
                         </div>
                         {isAdmin && 
                             <div className="w-100 d-flex justify-content-end">
-                                <Link to={`/review/admin/${filmInfo.id}`} className="btn btn-outline-secondary m-2">Amin Options</Link>
+                                <Link to={`/review/admin/${filmInfo.id}`} className="btn btn-outline-secondary m-2">Admin Options</Link>
                             </div>
                         }
                     </div>
