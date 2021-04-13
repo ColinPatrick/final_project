@@ -32,15 +32,15 @@ const Register: React.FC<RegisterProps> = props => {
         <main className="container">
                 <section className="row d-flex justify-content-center">
                     <div className="col-md-12 d-flex justify-content-center">
-                        <h2 className="text-center">Register:</h2>
+                        <h2 className="text-center text-white">Register:</h2>
                     </div>
                     <div className="col-md-6 d-flex justify-content-center">
                         <form className="form-group p-3">
-                        <label htmlFor="name" className="my-2">Username</label>
+                        <label htmlFor="name" className="text-white my-2">Username</label>
                             <input type="text" value={name} className="form-control form-control-lg my-2" id="name-input" onChange={e => setName(e.target.value)} />
-                            <label htmlFor="email" className="my-2">Email</label>
+                            <label htmlFor="email" className="text-white my-2">Email</label>
                             <input type="text" value={email} className="form-control form-control-lg my-2" id="email-input" onChange={e => setEmail(e.target.value)} />
-                            <label htmlFor="email" className="my-2">Password</label>
+                            <label htmlFor="email" className="text-white my-2">Password</label>
                             <input type="password" value={password} className="form-control form-control-lg my-2" id="pass-input" onChange={e => setPassword(e.target.value)} />
                             <div className="col-md-12 d-flex justify-content-end">
                                 <button className="btn btn-primary my-3" onClick={ handleRegister }>Sign Up</button>

@@ -7,21 +7,21 @@ import SearchBar from "./SearchBar";
 const Nav: React.FC<NavProps> = props => {
 
     return (
-        <nav className="nav d-flex shadow p-3 mb-4 justify-content-between navi-color">
+        <nav className="nav d-flex shadow p-3 mb-4 justify-content-between align-items-center navi-color rc-navbar">
             <div className="float-left">
                 {!User.userid &&
-                    <NavLink className="font-weight-light mx-4" activeClassName="border-bottom border-primary font-weight-bold" to="/login">Login</NavLink>
+                    <NavLink className="font-weight-light text-white mx-4" activeClassName="border-bottom border-white font-weight-bold" to="/login">Login</NavLink>
                 }
                 {User.userid &&
-                    <NavLink className="font-weight-light mx-4" activeClassName="border-bottom border-primary font-weight-bold" to="/login">Logout</NavLink>
+                    <NavLink className="font-weight-light text-white mx-4" activeClassName="border-bottom border-white font-weight-bold" to="/login">Logout</NavLink>
                 }
             </div>
-            <div className="d-flex flex-row">
+            <div className="d-flex flex-row align-items-center">
             {User.userid &&
-                <NavLink className="font-weight-light mx-4" activeClassName="border-bottom border-primary font-weight-bold" exact to={`/profile/${User.userid}`}>Profile</NavLink>            
+                <NavLink className="font-weight-light text-white mx-4" activeClassName="border-bottom border-white font-weight-bold" exact to={`/profile/${User.userid}`}>Profile</NavLink>            
             }
-                <NavLink className="font-weight-light mx-4" activeClassName="border-bottom border-primary font-weight-bold" exact to="/">Home</NavLink>
-                <NavLink className="font-weight-light mx-4" activeClassName="border-bottom border-primary font-weight-bold" exact to="/filmdb">Database</NavLink>
+                <NavLink className="font-weight-light text-white mx-4" activeClassName="border-bottom border-white font-weight-bold" exact to="/">Home</NavLink>
+                <NavLink className="font-weight-light text-white mx-4" activeClassName="border-bottom border-white font-weight-bold" exact to="/filmdb">Database</NavLink>
                 <SearchBar />
             </div>
         </nav>
