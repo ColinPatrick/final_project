@@ -34,9 +34,7 @@ const SearchResults = () => {
             .map((result: { id: any; title: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal; poster_path: any; overview: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal} , index) => (
               <div
                 key={nanoid()}
-                className="col-md-2 text-truncated card rounded shadow border overflow-hidden d-flex mx-1 my-2 pb-3"
-              >
-                <div className="card-body">
+                className="col-md-2 card rounded shadow border overflow-hidden d-flex mx-1 my-2 pb-3">
                 <Link className="h6 font-weight-bold text-truncate text-dark pt-2" 
                 to={`/film/${result.id}`}>{result.title}</Link>
                   <img
@@ -44,7 +42,6 @@ const SearchResults = () => {
                     alt="cap"
                   />
                 </div>
-              </div>
             ))}
           </div>
         </div>
