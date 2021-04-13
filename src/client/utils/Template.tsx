@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 const Template: React.FC<TemplateProps> = props => {
+
     return (
         <main className="container">
             <section className="row">

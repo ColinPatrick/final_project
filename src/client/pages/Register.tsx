@@ -14,7 +14,7 @@ const Register: React.FC<RegisterProps> = props => {
         e.preventDefault();
 
         let newUser: NewUser = {
-            name: name,
+            username: name,
             email: email,
             password: password
         };
@@ -25,8 +25,8 @@ const Register: React.FC<RegisterProps> = props => {
             props.history.push('/login');
         } else {
             alert('You are currently signed in. Please sign out to create a new account.');
-        }
-    }
+        };
+    };
 
     return (
         <main className="container">
@@ -36,7 +36,7 @@ const Register: React.FC<RegisterProps> = props => {
                     </div>
                     <div className="col-md-6 d-flex justify-content-center">
                         <form className="form-group p-3">
-                        <label htmlFor="name" className="my-2">Name</label>
+                        <label htmlFor="name" className="my-2">Username</label>
                             <input type="text" value={name} className="form-control form-control-lg my-2" id="name-input" onChange={e => setName(e.target.value)} />
                             <label htmlFor="email" className="my-2">Email</label>
                             <input type="text" value={email} className="form-control form-control-lg my-2" id="email-input" onChange={e => setEmail(e.target.value)} />
@@ -50,8 +50,8 @@ const Register: React.FC<RegisterProps> = props => {
                 </section>
             </main>
     );
-}
+};
 
-interface RegisterProps extends RouteComponentProps {}
+interface RegisterProps extends RouteComponentProps {};
 
-export default withRouter (Register)
+export default withRouter (Register);

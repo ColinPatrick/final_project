@@ -2,8 +2,42 @@ $theme-colors: (
     'primary': #0091ea //Covalence Blue!  :D
 );
 
+.profileLinkPic {
+    height: 70%;
+    width: 100%;
+}
 
+.profileLinkPic2 {
+    height: 70%;
+    width: 100%;
+}
 
+.profileLinkPic3 {
+    height: 90%;
+    width: 100%;
+}
+
+.profileLinkPic4 {
+    height: 90%;
+    width: 100%;
+}
+
+.topProfileImg {
+    height: 80%;
+    width: 35%;
+}
+
+#filmTitleDiv {
+    min-width: 275px;
+}
+
+#filmPlotDiv {
+    min-width: 425px;
+}
+
+#filmDataContainer {
+    margin-top: -100px;
+}
 
 
 @import '../../../node_modules/bootstrap/scss/bootstrap.scss';

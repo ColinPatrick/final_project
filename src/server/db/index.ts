@@ -23,7 +23,6 @@ import User from './queries/User';
 import accesstokens from './queries/accesstokens';
 import Blogs from './queries/Blogs';
 import Logs from './queries/Logs';
-import Reviews from './queries/Reviews';
 import Watchlist from './queries/Watchlist';
 import Films from './queries/Films';
 
@@ -33,7 +32,6 @@ export default {
     accesstokens,
     Blogs,
     Logs,
-    Reviews,
     Watchlist,
     Films
 }
