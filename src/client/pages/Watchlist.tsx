@@ -52,7 +52,7 @@ const Watchlist: React.FC<WatchlistProps> = props => {
             <section className="row d-flex justify-content-center">
                 <div className="w-100 d-flex justify-content-center flex-wrap">
                     <div className="col-md-12 d-flex justify-content-center mb-3">
-                        <h1 className="text-white my-4">{author}'s Watchlist:</h1>
+                        <h1 className="text-dark my-4">{author}'s Watchlist:</h1>
                     </div>
                     <div className="col-md-12 d-flex justify-content-center flex-wrap">
                         {watchlistFilms.map(log => (

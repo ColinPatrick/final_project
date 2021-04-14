@@ -31,7 +31,7 @@ const Reviews: React.FC<ReviewsProps> = props => {
         <main className="container d-flex justify-content-center">
             <div className="row d-flex justify-content-center">
                 <div className="col-md-12 d-flex justify-content-center mb-3">
-                    <h1 className="text-white my-4">All reviews by {author}:</h1>
+                    <h1 className="text-dark my-4">All reviews by {author}:</h1>
                 </div>
                 <div className="col-md-12 d-flex justify-content-center flex-column">
                     {filmLogs.map((movie: ILog) => (

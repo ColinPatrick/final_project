@@ -43,11 +43,11 @@ const Blogs: React.FC<BlogsProps> = props => {
         <main className="container d-flex justify-content-center">
             <div className="row d-flex justify-content-center">
                 <div className="col-md-12 d-flex justify-content-center mb-3">
-                    <h1 className="text-white my-4">All blogs by {blogAuthor}:</h1>
+                    <h1 className="text-dark my-4">All blogs by {blogAuthor}:</h1>
                 </div>
                 {isUserAdmin &&
                     <div className="col-md-12 d-flex justify-content-center mb-4">
-                        <Link className="btn btn-outline-light" to={"/new/blog/compose"}>Post New Blog</Link>
+                        <Link className="btn btn-outline-dark" to={"/new/blog/compose"}>Post New Blog</Link>
                     </div>
                 }
                 <div className="col-md-12 d-flex justify-content-center flex-column">

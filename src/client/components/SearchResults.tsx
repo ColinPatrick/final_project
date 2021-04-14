@@ -24,7 +24,7 @@ const SearchResults = () => {
       <main className="container d-flex justify-content-center">
         <div className="row d-flex justify-content-center">
           <div className="col-md-12 d-flex justify-content-center flex-wrap m-1">
-            <h1 className="text-white">Search Results</h1>
+            <h1 className="text-dark">Search Results</h1>
           </div>
           <div className="col-md-10 d-flex justify-content-between my-2"></div>
 

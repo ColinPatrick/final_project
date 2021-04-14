@@ -55,7 +55,7 @@ const LoggedFilms: React.FC<LoggedFilmsProps> = props => {
             <section className="row">
                 <div className="w-100 d-flex justify-content-center flex-wrap">
                 <div className="col-md-12 d-flex justify-content-center mb-3">
-                    <h1 className="text-white my-4">Logged Films Seen By {author}:</h1>
+                    <h1 className="text-dark my-4">Logged Films Seen By {author}:</h1>
                 </div>
                     <div className="col md-10 d-flex justify-content-center flex-wrap">
                         {loggedFilms.map(log => (

@@ -58,13 +58,13 @@ const Login: React.FC<LoginProps> = props => {
             <main className="container">
                 <section className="row d-flex justify-content-center">
                     <div className="col-md-12 d-flex justify-content-center">
-                        <h2 className="text-center text-white">Sign In:</h2>
+                        <h2 className="text-center text-dark">Sign In:</h2>
                     </div>
                     <div className="col-md-6 d-flex justify-content-center">
                         <form className="form-group p-3">
-                            <label htmlFor="email" className=" text-white my-2">Email</label>
+                            <label htmlFor="email" className=" text-dark my-2">Email</label>
                             <input type="text" value={email} className="form-control form-control-lg my-2" id="email-input" onChange={e => setEmail(e.target.value)} />
-                            <label htmlFor="email" className="text-white my-2">Password</label>
+                            <label htmlFor="email" className="text-dark my-2">Password</label>
                             <input type="password" value={password} className="form-control form-control-lg my-2" id="pass-input" onChange={e => setPassword(e.target.value)} />
                             <div className="col-md-12 d-flex justify-content-end">
                                 <button className="btn btn-primary my-3" onClick={ handleSignIn }>Sign In</button>
@@ -72,10 +72,10 @@ const Login: React.FC<LoginProps> = props => {
                         </form>
                     </div>
                     <div className="col-md-12 mb-4">
-                        <hr className="divide-line text-white" />
+                        <hr className="divide-line text-dark" />
                     </div>
                     <div className="col-md-12 d-flex justify-content-center">
-                        <h6 className="mb-3 text-white">No account?</h6>
+                        <h6 className="mb-3 text-dark">No account?</h6>
                     </div>
                     <div className="col-md-12 d-flex justify-content-center mt-1 mb-5">
                         <Link className="text-primary" to="/register">Create one today!</Link>
@@ -88,7 +88,7 @@ const Login: React.FC<LoginProps> = props => {
             <main className="container">
                 <div className="row d-flex justify-content-center">
                     <div className="col-md-12 d-flex justify-content-center m-3">
-                        <h4 className="primary text-white">You are currently signed in.</h4>
+                        <h4 className="primary text-dark">Are you sure you want to sign out?</h4>
                     </div>
                     <div className="col-md-12 d-flex justify-content-center m-4">
                         <button className="btn btn-primary rounded text-white" onClick={ handleSignOut }>Sign Out</button>

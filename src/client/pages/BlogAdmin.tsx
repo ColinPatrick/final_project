@@ -67,10 +67,10 @@ const BlogAdmin: React.FC<BlogAdminProps> = props => {
             <section className="row d-flex justify-content-center">
                 <div className="w-100 d-flex justify-content-center flex-wrap">
                     <div className="w-100 d-flex justify-content-center my-2">
-                        <h3 className="text-white">{blogAuthor}</h3>
+                        <h3 className="text-dark">{blogAuthor}</h3>
                     </div>
                     <div className="w-100 d-flex justify-content-center my-2">
-                        <h5 className="text-white">Edit your blog: {blogTitle}</h5>
+                        <h5 className="text-dark">Edit your blog: {blogTitle}</h5>
                     </div>
                     <div className="card col-md-7 border shadow rounded mt-2">
                         <div className="form-group p-3">

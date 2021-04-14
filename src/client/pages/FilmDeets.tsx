@@ -95,6 +95,7 @@ const FilmDeets: React.FC<FilmDeetsProps> = props => {
             if (isFilmPresent) {
                 const watchlistRes = await json('/api/watchlist', 'POST', listItem);
                 alert('Added to your watchlist!');
+                props.history.push(`/watchlist/${User.userid}`);
             } else {
                 let filmInfo: { filmid: number, name: string, poster: string } = {
                     filmid: movieDeets.id,
@@ -110,6 +111,7 @@ const FilmDeets: React.FC<FilmDeetsProps> = props => {
                 });
                 const watchlistRes = await json('/api/watchlist', 'POST', listItem);
                 alert('Added to your watchlist!');
+                props.history.push(`/watchlist/${User.userid}`);
             };
 
         };
@@ -133,6 +135,7 @@ const FilmDeets: React.FC<FilmDeetsProps> = props => {
                 if (isFilmPresent) {
                     const logRes = await json('/api/logs', 'POST', listItem);
                     alert('Added to your list of seen films!');
+                    props.history.push(`/seen/${User.userid}`);
                 } else {
                     let filmInfo: { filmid: number, name: string, poster: string } = {
                         filmid: movieDeets.id,
@@ -148,6 +151,7 @@ const FilmDeets: React.FC<FilmDeetsProps> = props => {
                     });
                     const logRes = await json('/api/logs', 'POST', listItem);
                     alert('Added to your list of seen films!');
+                    props.history.push(`/seen/${User.userid}`);
                 };
             }; 
         };

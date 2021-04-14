@@ -37,10 +37,10 @@ const SingleBlog: React.FC<SingleBlogProps> = props => {
             <section className="row d-flex justify-content-center">
                 <div className="col-md-12 d-flex justify-content-center flex-wrap my-5">
                     <div className="w-100 d-flex justify-content-center">
-                        <h1 className="text-center text-white my-3">{singleBlog.title}</h1>
+                        <h1 className="text-center text-dark my-3">{singleBlog.title}</h1>
                     </div>
                     <div className="w-100 d-flex justify-content-center my-2">
-                        <h4 className="text-white">By {singleBlog.username}</h4>
+                        <h4 className="text-dark">By {singleBlog.username}</h4>
                     </div>
                     <div className="card w-50 d-flex justify-content-center rounded shadow mt-3">
                         <div className="w-100 d-flex justify-content-center">
@@ -48,7 +48,7 @@ const SingleBlog: React.FC<SingleBlogProps> = props => {
                         </div>
                         {isUserAdmin && 
                             <div className="w-100 d-flex justify-content-end">
-                                <Link to={`/blog/admin/${singleBlog.id}`} className="btn btn-outline-secondary m-2">Amin Options</Link>
+                                <Link to={`/blog/admin/${singleBlog.id}`} className="btn btn-outline-secondary m-2">Admin Options</Link>
                             </div>
                         }
                     </div>

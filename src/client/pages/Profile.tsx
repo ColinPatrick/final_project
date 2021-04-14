@@ -65,7 +65,7 @@ const Profile: React.FC<ProfileProps> = props => {
         <main className="container d-flex justify-content-center my-2">
             <section className="row d-flex justify-content-center flex-wrap my-2">
                 <div className="col-md-12 d-flex justify-content-center my-4">
-                    <h1 className="text-white">{userInfo.username}'s Profile</h1>
+                    <h1 className="text-dark">{userInfo.username}'s Profile</h1>
                 </div>
                 <div className="col-md-12 d-flex justify-content-center my-2">
                     <img src="https://www.publicdomainpictures.net/pictures/300000/velka/movie-clapperboard.jpg" alt="profileImg" className="topProfileImg" />
@@ -73,7 +73,7 @@ const Profile: React.FC<ProfileProps> = props => {
                 <div className="d-flex justify-content-center flex-wrap mx-3 mt-1 mb-3">
                     <div className="col-sm-4 d-flex justify-content-center align-items-center flex-wrap border rounded shadow m-2">
                         <div className="w-100 d-flex justify-content-center align-items-center">
-                            <Link className="h2 text-white my-2 pt-1" to={`/watchlist/${userid}`}>Watchlist</Link>
+                            <Link className="h2 text-dark my-2 pt-1" to={`/watchlist/${userid}`}>Watchlist</Link>
                         </div>
                         <div className="w-100 d-flex justify-content-center align-items-center p-3">
                             <img src="https://www.publicdomainpictures.net/pictures/270000/velka/watching-tv.jpg" alt="watchlistPic" className="profileLinkPic" />
@@ -81,7 +81,7 @@ const Profile: React.FC<ProfileProps> = props => {
                     </div>
                     <div className="col-sm-4 d-flex justify-content-center align-items-center flex-wrap border rounded shadow m-2">
                         <div className="w-100 d-flex justify-content-center align-items-center">
-                            <Link className="h2 text-white my-2 pt-1" to={`/seen/${userid}`}>Seen Films</Link>
+                            <Link className="h2 text-dark my-2 pt-1" to={`/seen/${userid}`}>Seen Films</Link>
                         </div>
                         <div className="w-100 d-flex justify-content-center align-items-center p-3">
                             <img src="https://www.publicdomainpictures.net/pictures/270000/velka/woman-showing-checklist.jpg" alt="seenPic" className="profileLinkPic2" />
@@ -89,7 +89,7 @@ const Profile: React.FC<ProfileProps> = props => {
                     </div>
                     <div className="col-sm-4 d-flex justify-content-center align-items-center flex-wrap border rounded shadow lowerProfileImgs m-2">
                         <div className="w-100 d-flex justify-content-center align-items-center">
-                            <Link className="h2 text-white my-2 pt-1" to={`/reviews/${userid}`}>Reviews</Link>
+                            <Link className="h2 text-dark my-2 pt-1" to={`/reviews/${userid}`}>Reviews</Link>
                         </div>
                         <div className="w-100 d-flex justify-content-center align-items-center p-3">
                             <img src="https://www.publicdomainpictures.net/pictures/270000/velka/low-customer-satisfaction.jpg" alt="reviewsPic" className="profileLinkPic3" />
@@ -97,7 +97,7 @@ const Profile: React.FC<ProfileProps> = props => {
                     </div>
                     <div className="col-sm-4 d-flex justify-content-center align-items-center flex-wrap border rounded shadow lowerProfileImgs m-2">
                         <div className="w-100 d-flex justify-content-center align-items-center">
-                            <Link className="h2 text-white my-2 pt-1" to={`/blogs/${userid}`}>Blogs</Link>
+                            <Link className="h2 text-dark my-2 pt-1" to={`/blogs/${userid}`}>Blogs</Link>
                         </div>
                         <div className="w-100 d-flex justify-content-center align-items-center p-3">
                             <img src="https://www.publicdomainpictures.net/pictures/250000/velka/writing-1516440488vKR.jpg" alt="blogsPic" className="profileLinkPic4" />
@@ -108,7 +108,7 @@ const Profile: React.FC<ProfileProps> = props => {
                     {userBlogs[0] &&
                         <div className="d-flex justify-content-center flex-wrap m-2">
                             <div className="w-100 d-flex justify-content-center mx-1 mb-3">
-                                <h4 className="text-white">{userInfo.username}'s latest blog post!</h4>
+                                <h4 className="text-dark">{userInfo.username}'s latest blog post!</h4>
                             </div>
                             <div className="card col-md-7 d-flex justify-content-center flex-wrap border rounded shadow mx-1 my-3">
                                 <div className="card-body d-flex justify-content-center flex-wrap">
@@ -128,7 +128,7 @@ const Profile: React.FC<ProfileProps> = props => {
                     {!userBlogs[0] &&
                         <div className="d-flex justify-content-center flex-wrap m-2">
                             <div className="w-100 d-flex justify-content-center m-1">
-                                <h4 className="text-white">{userInfo.username}'s hasn't posted any blogs yet!</h4>
+                                <h4 className="text-dark">{userInfo.username}'s hasn't posted any blogs yet!</h4>
                             </div>
                         </div>
                     }

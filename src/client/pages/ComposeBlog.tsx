@@ -34,7 +34,7 @@ const ComposeBlog: React.FC<ComposeBlogProps> = props => {
             <section className="row d-flex justify-content-center">
                 <div className="w-100 d-flex justify-content-center flex-wrap">
                     <div className="w-100 d-flex justify-content-center my-2">
-                        <h5 className="text-white">Write a blog!</h5>
+                        <h5 className="text-dark">Write a blog!</h5>
                     </div>
                     <div className="card col-md-7 border shadow rounded mt-2 mb-4">
                         <div className="form-group p-3">
